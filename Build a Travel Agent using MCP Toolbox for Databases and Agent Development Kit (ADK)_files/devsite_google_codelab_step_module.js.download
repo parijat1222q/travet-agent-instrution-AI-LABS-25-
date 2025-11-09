@@ -1,0 +1,21 @@
+(function(_ds){var window=this;var X$=function(a){var b=a.step;const c=a.label;a='<h2 is-upgraded class="step-title"><a href="#'+_ds.S(b)+'">';b=_ds.Q(b+1)+". "+_ds.Q(c);return(0,_ds.O)(a+b+"</a></h2>")};/*
+
+ Copyright 2018 Google Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+*/
+var yDa=function(a){if(!a.ra){a.setAttribute("tabindex","-1");var b=a.getElementsByTagName("google-codelab-about");b.length>0&&(a.m=b[0],a.m.parentNode.removeChild(a.m));a.ma=_ds.cm(document,"div");a.ma.classList.add("instructions");a.j=_ds.cm(document,"div");a.j.classList.add("inner");_ds.jm(a.j,a);a.ma.appendChild(a.j);_ds.em(a);(b=a.j.querySelector(".step-title"))||(b=_ds.us(X$,{step:a.ua,label:a.qa}));a.o=b;_ds.gm(a.j,b,0);a.j.querySelectorAll("pre code").forEach(c=>{if(window.prettyPrintOne instanceof
+Function){const d=window.prettyPrintOne(c.innerHTML),e=_ds.ll(_ds.jl(_ds.il(new _ds.gl)));_ds.ag(c,_ds.Bg(e,d))}else c.classList.add("prettyprint");a.xa.listen(c,"copy",()=>{const d=new CustomEvent("google-codelab-action",{detail:{category:"snippet",action:"copy",label:c.textContent.substring(0,500)}});document.body.dispatchEvent(d)})});a.m&&a.appendChild(a.m);a.appendChild(a.ma);a.ra=!0}},zDa=function(a){return a.replace(/&amp;#(\d+);/g,function(b,c){return String.fromCharCode(c)})},Y$=class extends HTMLElement{constructor(){super();
+this.j=this.ma=null;this.ra=!1;this.ua=0;this.qa="";this.m=this.o=null;this.xa=new _ds.C}connectedCallback(){yDa(this)}disconnectedCallback(){}static get observedAttributes(){return["label","step"]}attributeChangedCallback(a){if(a==="label"||a==="step")this.hasAttribute("label")&&(this.qa=zDa(this.getAttribute("label"))),this.hasAttribute("step")&&(this.ua=parseInt(this.getAttribute("step")||"",10)),this.o&&(a=_ds.us(X$,{step:this.ua,label:this.qa}),_ds.im(a,this.o),this.o=a)}};
+Y$.prototype.attributeChangedCallback=Y$.prototype.attributeChangedCallback;Y$.prototype.disconnectedCallback=Y$.prototype.disconnectedCallback;Y$.prototype.connectedCallback=Y$.prototype.connectedCallback;var ADa=class extends Y${constructor(){super(...arguments);this.oa=!1;this.layout="";this.ea=new _ds.Zg}async connectedCallback(){this.oa=await (await _ds.u()).hasMendelFlagAccess("MiscFeatureFlags","enable_codelabs_as_a_content_type");var a;this.layout=((a=document.querySelector("google-codelab"))==null?void 0:a.getAttribute("layout"))||"paginated";if(this.oa||this.layout==="scrolling"){a=this.querySelectorAll("h2:not(.step-title),h3");for(var b of a)b.classList.add("hide-from-toc");b=document.querySelectorAll("devsite-toc");
+for(const c of b)c.ym("true")}else super.connectedCallback();this.ea.resolve()}disconnectedCallback(){super.disconnectedCallback();this.ea=new _ds.Zg}async attributeChangedCallback(a,b,c,d){await this.ea.promise;this.oa||this.layout==="scrolling"||super.attributeChangedCallback(a,b,c,d)}};try{customElements.define("google-codelab-step",ADa)}catch(a){console.warn("Unrecognized DevSite custom element - DevsiteCodelabStep",a)};})(_ds_www);
